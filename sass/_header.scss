@@ -1,12 +1,13 @@
 .nav{
-    background: url('../banner.jpg') no-repeat center;
-    object-fit: cover;
+    background: linear-gradient(to right, rgba(0,0,0,0.7),rgba(0,0,0,0.7)), url('../banner.jpg') fixed no-repeat center center / cover;
     width: set-col-width(1);
     &__bar{
         display: flex;
-        padding: 0 50px;
+        padding: 10px 50px;
         align-items: center;
         justify-content: space-between;
+        position: relative;
+        @include transition(all,1s,ease-in-out,null);
         &__logo{
             display: flex;
             flex-wrap: nowrap;
@@ -29,17 +30,20 @@
                 color: set-color(gray-9);
                 font-weight: 900;
                 text-align: left;
-                font-size: 40px;
+                font-size: 30px;
                 line-height: 1.15;
             }
         }
         &__burger{
             display: none;
             cursor: pointer;
-            @include transition(all,0.5s,ease-in-out,null);
             @include screen-max-width(750){
                 display: block;
                 width: 50px;
+                aspect-ratio: 1/1;
+                background:#00BCD4;
+                border-radius: 50%;
+                padding: 10px;
                 span{
                     height: 4px;
                     border-radius: 1px;
@@ -47,6 +51,7 @@
                     display: block;
                     width: set-col-width(1);
                     margin: 4px 0;
+                    @include transition(all,0.2s,null,null);
                 }
                 &--toggle{
                     span{
@@ -55,11 +60,11 @@
                         }
                         &:first-child{
                             transform: rotate(45deg);
-                            transform-origin: 40% bottom;
+                            transform-origin: 35% bottom;
                         }
                         &:last-child{
                             transform: rotate(-45deg);
-                            transform-origin: 40% top;
+                            transform-origin: 35% top;
                         }
                     }
                 }
@@ -71,7 +76,7 @@
         &__list{
             @include screen-max-width(750){
                 display: none;
-            };
+            }
             &__items{
                 display: flex;
                 justify-content: center;
@@ -86,6 +91,38 @@
                         border-radius: 5px;
                         font-weight: 500;
                         white-space: nowrap;
+                        @include transition(all,0.5s,null,null);
+                    }
+                    &:hover &__link{
+                        color: set-color(white);
+                        background: set-color(gray-5);
+                    }
+                }
+            }
+            &--toggle{
+                z-index: 1;
+                background: #00BCD4;
+                width: set-col-width(1);
+                position: absolute;
+                top: 88px;
+                overflow: hidden;
+                height: auto;
+                right: 0;
+                display: block;
+                ul{
+                    display: block;
+                    li{
+                        margin: 5px auto;
+                        display: block;
+                        text-align: center;
+                        cursor: pointer;
+                        a{
+                            background: transparent;
+                            border-radius: 0;
+                        }
+                        &:hover a{
+                            background: transparent !important;
+                        }
                     }
                 }
             }
@@ -114,11 +151,13 @@
             font-weight: 600;
             font-size: 48px;
             text-transform: capitalize;
+            color: set-color(gray-2);
         }
         &__second{
             font-weight: 300;
             font-size: 44px;
             text-transform: capitalize;
+            color: set-color(gray-2);
         }
     }
 }

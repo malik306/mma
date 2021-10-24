@@ -2,8 +2,6 @@
     padding: 50px 30px;
     display: grid;
     grid-template: auto/1fr 1fr;
-    place-content: center;
-    place-items: center;
     grid-gap: 10px;
     @include screen-max-width(1050){
         grid-template: auto/1fr;
@@ -44,14 +42,15 @@
             }
             p{
                 font-size: 15px;
-                line-height: 15px+15px;
+                line-height: 15px*2;
             }
         }
         &__image{
+            border: 1px solid;
+            text-align: center;
             img{
-                background: no-repeat center;
-                object-fit: cover;
-                background-size: cover;
+                background: no-repeat center center/cover;
+                max-width: 100%;
             }
         }
     }

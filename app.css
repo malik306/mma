@@ -12,15 +12,16 @@
 }
 
 .nav {
-  background: url("../banner.jpg") no-repeat center;
-  object-fit: cover;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../banner.jpg") fixed no-repeat center center/cover;
   width: 100%;
 }
 .nav__bar {
   display: flex;
-  padding: 0 50px;
+  padding: 10px 50px;
   align-items: center;
   justify-content: space-between;
+  position: relative;
+  transition: all 1s ease-in-out;
 }
 .nav__bar__logo {
   display: flex;
@@ -45,18 +46,21 @@
   color: #212529;
   font-weight: 900;
   text-align: left;
-  font-size: 40px;
+  font-size: 30px;
   line-height: 1.15;
 }
 .nav__bar__burger {
   display: none;
   cursor: pointer;
-  transition: all 0.5s ease-in-out;
 }
 @media only screen and (max-width: 750px) {
   .nav__bar__burger {
     display: block;
     width: 50px;
+    aspect-ratio: 1/1;
+    background: #00BCD4;
+    border-radius: 50%;
+    padding: 10px;
   }
   .nav__bar__burger span {
     height: 4px;
@@ -65,17 +69,18 @@
     display: block;
     width: 100%;
     margin: 4px 0;
+    transition: all 0.2s;
   }
   .nav__bar__burger--toggle span:nth-child(2) {
     display: none;
   }
   .nav__bar__burger--toggle span:first-child {
     transform: rotate(45deg);
-    transform-origin: 40% bottom;
+    transform-origin: 35% bottom;
   }
   .nav__bar__burger--toggle span:last-child {
     transform: rotate(-45deg);
-    transform-origin: 40% top;
+    transform-origin: 35% top;
   }
   .nav__bar__burger:hover span {
     background: #adb5bd;
@@ -102,6 +107,38 @@
   border-radius: 5px;
   font-weight: 500;
   white-space: nowrap;
+  transition: all 0.5s;
+}
+.nav__bar__list__items__item:hover .nav__bar__list__items__item__link {
+  color: white;
+  background: #adb5bd;
+}
+.nav__bar__list--toggle {
+  z-index: 1;
+  background: #00BCD4;
+  width: 100%;
+  position: absolute;
+  top: 88px;
+  overflow: hidden;
+  height: auto;
+  right: 0;
+  display: block;
+}
+.nav__bar__list--toggle ul {
+  display: block;
+}
+.nav__bar__list--toggle ul li {
+  margin: 5px auto;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+}
+.nav__bar__list--toggle ul li a {
+  background: transparent;
+  border-radius: 0;
+}
+.nav__bar__list--toggle ul li:hover a {
+  background: transparent !important;
 }
 .nav__info {
   position: relative;
@@ -127,11 +164,13 @@
   font-weight: 600;
   font-size: 48px;
   text-transform: capitalize;
+  color: #e9ecef;
 }
 .nav__info__second {
   font-weight: 300;
   font-size: 44px;
   text-transform: capitalize;
+  color: #e9ecef;
 }
 
 .what-we-do {
@@ -165,6 +204,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  cursor: pointer;
+  transition: all 0.5s;
 }
 .what-we-do__list-items__item i {
   font-size: 60px;
@@ -187,13 +228,14 @@
   font-size: 14px;
   white-space: pre-wrap;
 }
+.what-we-do__list-items__item:hover {
+  background: #adb5bd;
+}
 
 .overview {
   padding: 50px 30px;
   display: grid;
   grid-template: auto/1fr 1fr;
-  place-content: center;
-  place-items: center;
   grid-gap: 10px;
 }
 @media only screen and (max-width: 1050px) {
@@ -238,10 +280,13 @@
   font-size: 15px;
   line-height: 30px;
 }
+.overview__support__image, .overview__web__image {
+  border: 1px solid;
+  text-align: center;
+}
 .overview__support__image img, .overview__web__image img {
-  background: no-repeat center;
-  object-fit: cover;
-  background-size: cover;
+  background: no-repeat center center/cover;
+  max-width: 100%;
 }
 
 .wrapper {

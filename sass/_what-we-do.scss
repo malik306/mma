@@ -23,6 +23,8 @@
             display: flex;
             flex-direction: column;
             align-items: center;
+            cursor: pointer;
+            transition: all 0.5s;
             i{
                 font-size: 60px;
                 width: 60px;
@@ -43,6 +45,9 @@
                 text-align: justify;
                 font-size: 14px;
                 white-space: pre-wrap;
+            }
+            &:hover{
+                background: set-color(gray-5);
             }
         }
     }
