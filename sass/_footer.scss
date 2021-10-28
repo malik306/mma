@@ -13,45 +13,45 @@
     align-items: center;
     padding: 60px 0;
     text-align: center;
-    p{
-        font-size: 15px;
-        color: set-color(gray-5);
-        margin-top: 15px;
+    p {
+      font-size: 15px;
+      color: set-color(gray-5);
+      margin-top: 15px;
     }
   }
-  &__center{
-      display: grid;
-      grid-template: 1fr/1fr 1fr 1fr;
-      grid-gap: 10px;
-      padding: 0 40px;
-      margin-bottom: 30px;
-      @include screen-max-width(750){
-        grid-template: auto/1fr 1fr;
-      };
-      @include screen-max-width(600){
-        grid-template: auto/1fr;
-      };
-      &__list-item{
-        background: set-color(gray-8);
-        border-radius: 10px;
-        box-shadow: 0 0 5px 0.5px rgba(#000,0.5);
-        padding: 15px;
-        display: flex;
-        flex-direction: column;
-        h2{
-            color: set-color(white);
-            margin-bottom: 10px;
+  &__center {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 10px;
+    padding: 0 40px;
+    margin-bottom: 30px;
+    @include screen-max-width(750) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include screen-max-width(600) {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__list-item {
+      background: set-color(gray-8);
+      border-radius: 10px;
+      box-shadow: 0 0 5px 0.5px rgba(#000, 0.5);
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      h2 {
+        color: set-color(white);
+        margin-bottom: 10px;
+      }
+      ul li {
+        color: set-color(gray-5);
+        font-size: 15px;
+        margin: 10px 0;
+        a {
+          color: set-color(gray-5);
+          font-size: 15px;
         }
-        ul li{
-            color: set-color(gray-5);
-            font-size: 15px;
-            margin: 10px 0;
-            a{
-                color: set-color(gray-5);
-                font-size: 15px;
-            }
-        }
-      } 
+      }
+    }
   }
   &__bottom {
     height: 10vh;
