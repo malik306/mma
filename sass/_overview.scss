@@ -1,52 +1,87 @@
+// .overview {
+//   padding: 50px 30px;
+//   display: grid;
+//   grid-template-columns: repeat(2, 250px);
+//   grid-gap: 10px;
+//   @include screen-max-width(1190) {
+//     &__support__title-desc {
+//       grid-area: 1/1/2/3;
+//     }
+//     &__web__title-desc {
+//       grid-area: 3/1/4/3;
+//     }
+//     &__support__image {
+//       grid-area: 2/1/3/2;
+//     }
+//     &__web__image {
+//       grid-area: 2/2/3/3;
+//     }
+//   }
+//   @include screen-max-width(1090) {
+//     &__support__image {
+//       grid-area: 2/1/3/3;
+//     }
+//     &__web__image {
+//       grid-area: 3/1/4/3;
+//     }
+//     &__support__title-desc {
+//       grid-area: 1/1/2/3;
+//     }
+//     &__web__title-desc {
+//       grid-area: 4/1/5/3;
+//     }
+//   }
+//   &__support,
+//   &__web {
+//     &__title-desc {
+//       h2 {
+//         font-size: 30px;
+//         margin-bottom: 15px;
+//       }
+//       p {
+//         font-size: 15px;
+//         line-height: 15px * 2;
+//       }
+//     }
+//     &__image {
+//       text-align: center;
+//       min-width: 200px;
+//       img {
+//         background: no-repeat center center/cover;
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
+
 .overview {
+  display: flex;
+  flex-wrap: wrap;
   padding: 50px 30px;
-  display: grid;
-  grid-template: auto/repeat(auto-fit, minmax(540px, 1fr));
-  grid-gap: 10px;
-  @include screen-max-width(1150) {
-    &__support__title-desc {
-      grid-area: 1/1/2/3;
-    }
-    &__web__title-desc {
-      grid-area: 3/1/4/3;
-    }
-    &__support__image {
-      grid-area: 2/1/3/2;
-    }
-    &__web__image {
-      grid-area: 2/2/3/3;
-    }
-  }
-  @include screen-max-width(1120) {
-    &__support__image {
-      grid-area: 2/1/3/3;
-    }
-    &__web__image {
-      grid-area: 3/1/4/3;
-    }
-    &__support__title-desc {
-      grid-area: 1/1/2/3;
-    }
-    &__web__title-desc {
-      grid-area: 4/1/5/3;
-    }
-  }
   &__support,
   &__web {
     &__title-desc {
       h2 {
         font-size: 30px;
         margin-bottom: 15px;
+        @include screen-max-width(576){
+          font-size: 16px;
+        }
       }
       p {
         font-size: 15px;
         line-height: 15px * 2;
+        text-align: justify;
       }
     }
     &__image {
       text-align: center;
+      @include screen-max-width(1140){
+        width: 100%;
+      }
       img {
         background: no-repeat center center/cover;
+        width: 100%;
       }
     }
   }
