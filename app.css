@@ -35,7 +35,7 @@
   height: 60px;
   aspect-ratio: 1/1;
   color: rgba(0, 0, 0, 0.69);
-  background: #00BCD4;
+  background: #00bcd4;
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -63,7 +63,7 @@
     display: block;
     width: 50px;
     aspect-ratio: 1/1;
-    background: #00BCD4;
+    background: #00bcd4;
     border-radius: 50%;
     padding: 10px;
   }
@@ -120,7 +120,7 @@
 }
 .nav__bar__list--toggle {
   z-index: 1;
-  background: #00BCD4;
+  background: #00bcd4;
   width: 100%;
   position: absolute;
   top: 88px;
@@ -223,7 +223,7 @@
 .what-we-do__list-items {
   display: grid;
   grid-template: auto/repeat(auto-fit, minmax(250px, 1fr));
-  grid-gap: 10px;
+  gap: 10px;
 }
 .what-we-do__list-items__item {
   background: white;
@@ -264,6 +264,9 @@
 .overview {
   display: flex;
   flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+  max-width: 100%;
   padding: 50px 30px;
 }
 .overview__support__title-desc h2, .overview__web__title-desc h2 {
@@ -283,14 +286,61 @@
 .overview__support__image, .overview__web__image {
   text-align: center;
 }
-@media only screen and (max-width: 1140px) {
-  .overview__support__image, .overview__web__image {
-    width: 100%;
-  }
-}
 .overview__support__image img, .overview__web__image img {
   background: no-repeat center center/cover;
   width: 100%;
+}
+.overview__support__title-desc {
+  flex: 0 0 auto;
+  width: 50%;
+}
+@media only screen and (max-width: 992px) {
+  .overview__support__title-desc {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+.overview__support__image {
+  flex: 0 0 auto;
+  width: 48.75%;
+}
+@media only screen and (max-width: 992px) {
+  .overview__support__image {
+    flex: 0 0 auto;
+    width: 49.1666666667%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .overview__support__image {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+.overview__web__title-desc {
+  flex: 0 0 auto;
+  width: 50%;
+}
+@media only screen and (max-width: 992px) {
+  .overview__web__title-desc {
+    flex: 0 0 auto;
+    width: 100%;
+  }
+}
+.overview__web__image {
+  flex: 0 0 auto;
+  width: 48.75%;
+}
+@media only screen and (max-width: 992px) {
+  .overview__web__image {
+    flex: 0 0 auto;
+    width: 49.1666666667%;
+  }
+}
+@media only screen and (max-width: 768px) {
+  .overview__web__image {
+    flex: 0 0 auto;
+    width: 100%;
+  }
 }
 
 .wrapper {
@@ -301,7 +351,7 @@
   background: #212529;
 }
 .wrapper__top {
-  width: 50%;
+  width: 66.6666666667%;
   color: white;
   display: flex;
   flex-direction: column;
@@ -316,21 +366,13 @@
   margin-top: 15px;
 }
 .wrapper__center {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 10px;
-  padding: 0 40px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-bottom: 30px;
-}
-@media only screen and (max-width: 750px) {
-  .wrapper__center {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-@media only screen and (max-width: 600px) {
-  .wrapper__center {
-    grid-template-columns: repeat(1, 1fr);
-  }
+  width: 100%;
+  max-width: 100%;
+  justify-content: center;
 }
 .wrapper__center__list-item {
   background: #343a40;
@@ -339,6 +381,36 @@
   padding: 15px;
   display: flex;
   flex-direction: column;
+  flex: 0 0 auto;
+  width: 25%;
+}
+@media only screen and (max-width: 992px) {
+  .wrapper__center__list-item:nth-child(1) {
+    flex: 0 0 auto;
+    width: 41.6666666667%;
+  }
+  .wrapper__center__list-item:nth-child(2) {
+    flex: 0 0 auto;
+    width: 41.6666666667%;
+  }
+  .wrapper__center__list-item:nth-child(3) {
+    flex: 0 0 auto;
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 576px) {
+  .wrapper__center__list-item:nth-child(1) {
+    flex: 0 0 auto;
+    width: 83.3333333333%;
+  }
+  .wrapper__center__list-item:nth-child(2) {
+    flex: 0 0 auto;
+    width: 83.3333333333%;
+  }
+  .wrapper__center__list-item:nth-child(3) {
+    flex: 0 0 auto;
+    width: 83.3333333333%;
+  }
 }
 .wrapper__center__list-item h2 {
   color: white;
@@ -363,7 +435,7 @@
 }
 .wrapper__bottom p,
 .wrapper__bottom a {
-  font-size: 14px;
+  font-size: 12px;
   color: #adb5bd;
   font-weight: 500;
 }

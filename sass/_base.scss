@@ -8,7 +8,7 @@
   list-style: none;
   outline: none;
   border: none;
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: "Source Sans Pro", sans-serif;
 }
 
 //Variables
@@ -48,7 +48,14 @@ $color: (
   @return mix(#000000, $color, $percentage);
 }
 @function set-col-width($cols-divide) {
-  @return math.div(100% , $cols-divide);
+  @return math.div(100%, math.div(12, $cols-divide));
+}
+@mixin col-flex {
+  flex: 1 0 0%;
+}
+@mixin col-n-flex($value) {
+  flex: 0 0 auto;
+  width: math.div(100%, math.div(12, $value));
 }
 
 //Mixin
@@ -70,6 +77,15 @@ $color: (
   }
 }
 
-@mixin animation($name,$duration,$time-function,$delay,$iteration-count,$direction,$mode) {
-  animation: #{$name} $duration $time-function $delay $iteration-count $direction $mode;
+@mixin animation(
+  $name,
+  $duration,
+  $time-function,
+  $delay,
+  $iteration-count,
+  $direction,
+  $mode
+) {
+  animation: #{$name} $duration $time-function $delay $iteration-count $direction
+    $mode;
 }

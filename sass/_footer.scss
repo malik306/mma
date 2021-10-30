@@ -5,7 +5,7 @@
   align-items: center;
   background: set-color(gray-9);
   &__top {
-    width: set-col-width(2);
+    width: set-col-width(8);
     color: set-color(white);
     display: flex;
     flex-direction: column;
@@ -20,17 +20,13 @@
     }
   }
   &__center {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-gap: 10px;
-    padding: 0 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
     margin-bottom: 30px;
-    @include screen-max-width(750) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @include screen-max-width(600) {
-      grid-template-columns: repeat(1, 1fr);
-    }
+    width: 100%;
+    max-width: 100%;
+    justify-content: center;
     &__list-item {
       background: set-color(gray-8);
       border-radius: 10px;
@@ -38,6 +34,29 @@
       padding: 15px;
       display: flex;
       flex-direction: column;
+      @include col-n-flex(3);
+      @include screen-max-width(992) {
+        &:nth-child(1) {
+          @include col-n-flex(5);
+        }
+        &:nth-child(2) {
+          @include col-n-flex(5);
+        }
+        &:nth-child(3) {
+          @include col-n-flex(6);
+        }
+      }
+      @include screen-max-width(576) {
+        &:nth-child(1) {
+          @include col-n-flex(10);
+        }
+        &:nth-child(2) {
+          @include col-n-flex(10);
+        }
+        &:nth-child(3) {
+          @include col-n-flex(10);
+        }
+      }
       h2 {
         color: set-color(white);
         margin-bottom: 10px;
@@ -55,14 +74,14 @@
   }
   &__bottom {
     height: 10vh;
-    width: set-col-width(1);
+    width: set-col-width(12);
     background: set-color(gray-8);
     display: flex;
     justify-content: center;
     align-items: center;
     p,
     a {
-      font-size: 14px;
+      font-size: 12px;
       color: set-color(gray-5);
       font-weight: 500;
     }
