@@ -1,5 +1,6 @@
 .nav {
-  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../banner.jpg") fixed no-repeat center center / cover;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url("../banner.jpg") fixed no-repeat center center / cover;
   width: set-col-width(12);
   &__bar {
     display: flex;
@@ -42,11 +43,14 @@
       cursor: pointer;
       @include screen-max-width(750) {
         display: block;
-        width: 50px;
-        aspect-ratio: 1/1;
+        right: 50px;
+        position: absolute;
+        width: 40px;
+        line-height: normal;
         background: #00bcd4;
         border-radius: 50%;
-        padding: 10px;
+        aspect-ratio: 1/1;
+        padding: 0.6em;
         span {
           height: 4px;
           border-radius: 1px;
@@ -78,7 +82,10 @@
     }
     &__list {
       @include screen-max-width(750) {
-        display: none;
+        opacity: 0;
+        transition: all 0.6s;
+        transform-origin: left;
+        transform: translateX(-200%);
       }
       &__items {
         display: flex;
@@ -104,14 +111,13 @@
       }
       &--toggle {
         z-index: 1;
+        opacity: 1;
+        transform: translateX(0);
         background: #00bcd4;
-        width: set-col-width(12);
         position: absolute;
         top: 88px;
-        overflow: hidden;
-        height: auto;
-        right: 0;
-        display: block;
+        left: 0;
+        width: set-col-width(12);
         ul {
           display: block;
           li {
