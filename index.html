@@ -9,7 +9,7 @@
     <link rel="shortcut icon" href="#" type="image/x-icon">
 </head>
 <body>
-    <header class="nav">
+    <header class="nav" id="home">
        <nav class="nav__bar">
            <a class="nav__bar__logo" href="./index.html">
             <i class="fab fa-blackberry"></i>
@@ -22,10 +22,10 @@
           </button>
            <div class="nav__bar__list">
                <ul class="nav__bar__list__items">
-                   <li class="nav__bar__list__items__item"><a href="" class="nav__bar__list__items__item__link">Home</a></li>
-                   <li class="nav__bar__list__items__item"><a href="" class="nav__bar__list__items__item__link">What We Do</a></li>
-                   <li class="nav__bar__list__items__item"><a href="" class="nav__bar__list__items__item__link">Overview</a></li>
-                   <li class="nav__bar__list__items__item"><a href="" class="nav__bar__list__items__item__link">Contact Us</a></li>
+                   <li class="nav__bar__list__items__item"><a href="#home" class="nav__bar__list__items__item__link">Home</a></li>
+                   <li class="nav__bar__list__items__item"><a href="#services" class="nav__bar__list__items__item__link">What We Do</a></li>
+                   <li class="nav__bar__list__items__item"><a href="#overview" class="nav__bar__list__items__item__link">Overview</a></li>
+                   <li class="nav__bar__list__items__item"><a href="#contact" class="nav__bar__list__items__item__link">Contact Us</a></li>
                </ul>               
            </div>
        </nav>
@@ -35,7 +35,7 @@
            <p class="nav__info__second">E-Identity Is Important For Business</p>
        </div>
     </header>
-    <section class="what-we-do">
+    <section class="what-we-do" id="services">
         <h2 class="what-we-do__title">What We Do</h2>
         <div class="what-we-do__list-items">
             <div class="what-we-do__list-items__item">
@@ -90,7 +90,7 @@
             </div>
         </div>
     </section>
-    <section class="overview">
+    <section class="overview" id="overview">
             <div class="overview__support__title-desc">
                 <h2>IT Support Solutions that work for you</h2>
                 <p>From hospitality to the finance industry, we create custom technology solutions that work for your business, exactly where you are. We’ve built a company that has the operational maturity, expertise, and resources to truly secure your network and make sure it operates at its best. You have enough things to worry about when it comes to running your business. Let us cross IT support off your list.</br>We don’t provide one-size-fits-all support. We seek solutions that get to the heart of what your business really needs.</p>
@@ -106,7 +106,7 @@
                 <p>Yes, we really do everything for you — from website fixes, updates, maintenance and support, to hosting, emails and domain care, to working with you on growing your online business, improving your SEO and website visibility, and increasing your online business revenue. It’s like having your own team of web experts for a fraction of the cost.</br>Tell us what needs fixing, updating, or changing and we get working on it straight away. If you need help with your online business then we start talking about your online business goals and start working towards making those happen</p>
             </div>
     </section>
-    <footer class="wrapper">
+    <footer class="wrapper" id="contact">
         <section class="wrapper__top">
             <h2>What we do for you</h2>
             <p>You get hassle-free support and unlimited all-round care for your business from our team, available 24/7/365 regardless of where you are in the world</p>
@@ -141,6 +141,7 @@
             <p>&copy; 2021 All rights reserved | Design by <a href="./index.html">MMA Enterprises</a></p>
         </section>
     </footer>
+    <a href="#home" class="scroll-y fas fa-arrow-up fa-2x"></a>
     <script src="app.js"></script>
 </body>
 </html>

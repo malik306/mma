@@ -11,6 +11,20 @@
   font-family: "Source Sans Pro", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+.scroll-y {
+  padding: 0.2em;
+  background: #00bcd4;
+  color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  border-radius: 0.2em;
+  right: 0.5em;
+  bottom: 0.5em;
+}
+
 .nav {
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("../banner.jpg") fixed no-repeat center center/cover;
   width: 100%;
@@ -84,11 +98,11 @@
   }
   .nav__bar__burger--toggle span:first-child {
     transform: rotate(45deg);
-    transform-origin: 35% bottom;
+    transform-origin: 30%;
   }
   .nav__bar__burger--toggle span:last-child {
     transform: rotate(-45deg);
-    transform-origin: 35% top;
+    transform-origin: 30%;
   }
   .nav__bar__burger:hover span {
     background: #adb5bd;
@@ -96,10 +110,29 @@
 }
 @media only screen and (max-width: 750px) {
   .nav__bar__list {
-    opacity: 0;
     transition: all 0.6s;
     transform-origin: left;
     transform: translateX(-200%);
+    z-index: 1;
+    position: absolute;
+    background: #00bcd4;
+    position: absolute;
+    top: 88px;
+    left: 0;
+    width: 100%;
+    padding: 0.6em 0;
+  }
+  .nav__bar__list__items {
+    flex-direction: column;
+    text-align: center;
+    display: block !important;
+  }
+  .nav__bar__list__items__item {
+    margin: 6px auto !important;
+    display: block;
+  }
+  .nav__bar__list__items__item__link {
+    background: none !important;
   }
 }
 .nav__bar__list__items {
@@ -125,30 +158,7 @@
   background: #adb5bd;
 }
 .nav__bar__list--toggle {
-  z-index: 1;
-  opacity: 1;
   transform: translateX(0);
-  background: #00bcd4;
-  position: absolute;
-  top: 88px;
-  left: 0;
-  width: 100%;
-}
-.nav__bar__list--toggle ul {
-  display: block;
-}
-.nav__bar__list--toggle ul li {
-  margin: 5px auto;
-  display: block;
-  text-align: center;
-  cursor: pointer;
-}
-.nav__bar__list--toggle ul li a {
-  background: transparent;
-  border-radius: 0;
-}
-.nav__bar__list--toggle ul li:hover a {
-  background: transparent !important;
 }
 .nav__info {
   position: relative;

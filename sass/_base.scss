@@ -10,7 +10,18 @@
   border: none;
   font-family: "Source Sans Pro", sans-serif;
 }
-
+html {
+  scroll-behavior: smooth;
+}
+.scroll-y {
+  padding: 0.2em;
+  background: #00bcd4;
+  color: rgba(0, 0, 0, 0.6);
+  position: fixed;
+  border-radius: 0.2em;
+  right: 0.5em;
+  bottom: 0.5em;
+}
 //Variables
 $color: (
   blue: blue,
